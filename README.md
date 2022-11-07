@@ -1,0 +1,1 @@
+# gorozoPageSettings_livedoor
