@@ -1,0 +1,1015 @@
+@charset "UTF-8";
+
+/* Information
+==================================================
+livedoor Blog CSS
+ Name   : lohas check pattern blue
+ Layout : 2カラム
+
+ Update : 2009.10.06
+==================================================
+*/
+
+/* Table of Contents
+==================================================
+	01. Text - フォント・リンク
+	02. Layout - 全体の枠組み
+	03. Title - ブログタイトルエリア
+	04. SubTitle - アーカイブタイトルエリア
+	05. Pager -ページャ
+	06. Main - 記事エリア
+	07. Option - トラックバック・コメントエリア
+	08. Sub & Extra - プラグインエリア
+	09. Header & Footer - ヘッダー・フッター
+	10. Others - ADエリア etc.
+==================================================
+*/
+
+/* =============================================== */
+/** 01. Text - フォント・リンク */
+/* ----------------------------------------------- */
+
+* {
+	word-break: break-all;
+}
+
+body,
+textarea {
+	font-family: "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3", "Meiryo" ,"ＭＳ Ｐゴシック",sans-serif;
+}
+
+body {
+	color: #5A3D1C;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a{
+	color: #5a3d1c;
+}
+
+a:hover,
+a:active{
+	color: #5a3d1c;
+	text-decoration: none;
+}
+
+h1#blog-title a:link,
+h1#blog-title a:active,
+h1#blog-title a:visited {
+	color: #7098b3;
+	text-decoration: none;
+}
+
+h1#blog-title a:hover {
+	text-decoration: underline;
+}
+
+h2.article-title a:hover {
+	text-decoration: underline;
+}
+
+p#blog-description {
+	color: #10100f;
+}
+
+h2.archives-title {
+	color: #7098b3;
+}
+
+/* ADエリアはCSS別途指定 */
+
+/* =============================================== */
+/** 02. Layout - レイアウト（全体の枠組み） */
+/* ----------------------------------------------- */
+
+body {
+	margin: 0;
+	padding: 0;
+	min-width: 860px;
+	text-align: center;
+	background: url(https://parts.blog.livedoor.jp/img/usr/lohas003_2/bg_body_01.png) repeat-y 50% 0 #fff;
+}
+
+div#container {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+div#content {
+	width: 810px;
+	padding: 0;
+	height: 1%;
+	margin: 0 auto;
+}
+
+* html div#content {
+}
+
+div#main,
+div#sub,
+div#extra {
+	overflow: hidden;
+}
+
+div#main {
+	float: right;
+	display: inline;
+	width: 540px;
+}
+
+div#main div.column-inner {
+	width: 540px;
+}
+
+div#sub {
+	display:inline;
+	float:left;
+	width:240px;
+	background: #fff;
+	padding: 15px 0 0 0;
+}
+
+div#sub div.column-inner {
+	padding: 0 20px;
+}
+
+div#extra {
+	clear: left;
+	display:inline;
+	float:left;
+	width:240px;
+	background: #fff;
+	padding: 15px 0 0 0;
+}
+
+div#extra div.column-inner {
+	padding: 0 20px 15px 20px;
+}
+
+/* ----------------------------------------------- */
+/** clearfix */
+
+div#container:after,
+div#content:after,
+ul.article-navigator:after,
+ul.archives-navigator:after,
+div.article-body:after,
+div.article-body div.article-body-more:after,
+div#trackback-form ul:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+/** hasLayout */
+div.blog-title-outer,
+div.article-outer,
+h2.archives-title,
+div.article-body,
+div.article-footer,
+h2.article-title,
+div.pager,
+ul,
+div.index-navigator-outer {
+	height: 1%;
+}
+
+/** peek-a-boo bug */
+div#trackback-form,
+div#trackbacks-list,
+div#comments-list,
+div#comment-form {
+	height: 1%;
+}
+
+
+/* =============================================== */
+/** 03. Title - ブログタイトルエリア */
+/* ----------------------------------------------- */
+
+div.blog-title-outer {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	text-align: center;
+}
+
+div.blog-title-outer-2 {
+	height: 200px;
+}
+
+div.blog-title-outer-3 {
+	position: relative;
+	height: 200px;
+	width: 860px;
+	margin: 0 auto;
+	background: url(https://parts.blog.livedoor.jp/img/usr/lohas003_2/bg_blogheader_01.png) no-repeat 642px 50px;
+}
+
+h1#blog-title {
+	width: 860px;
+	margin: 0 auto;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: left;
+	padding: 60px 0 0 35px;
+}
+
+h1#blog-title a {
+	color: #466173;
+}
+
+div.blog-description-outer {
+	width: 860px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+p#blog-description {
+	width: 600px;
+	font-size: 83%;
+	padding-left: 35px;
+}
+
+/* =============================================== */
+/** 04. SubTitle - アーカイブタイトルエリア */
+/* ----------------------------------------------- */
+
+div.archives-title-outer {
+	margin-bottom: 10px;
+}
+div.archives-title-outer-2 {
+	padding-top: 15px;
+}
+div.archives-title-outer-3 {
+	padding-right: 20px;
+}
+
+h2.archives-title {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 15px;
+	text-align: center;
+	font-size: 100%;
+}
+
+/* =============================================== */
+/** 05. Pager - ページャ */
+/* ----------------------------------------------- */
+
+div.pager {
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+div.pager a {
+/*	color: #9A9A9A;*/
+}
+
+div.pager-inner {
+	padding-bottom: 5px;
+}
+
+div.index-navigator-outer,
+div.archives-pager-outer,
+div.article-pager-outer {
+}
+
+/* ----------------------------------------------- */
+/** IndexNavigator - トップページ */
+
+ul.index-navigator {
+	font-size: 83%;
+	padding-top: 5px;
+}
+
+ul.index-navigator li a {
+	padding: 0 7px;
+}
+
+/* ----------------------------------------------- */
+/** ArchivesPager - アーカイブページ */
+
+ul.archives-pager {
+	padding-top: 15px;
+	font-size: 83%;
+}
+
+ul.archives-pager li {
+	padding: 2px 5px;
+}
+
+ul.archives-pager li a {
+	padding: 0 5px;
+}
+
+ul.archives-pager li.both {
+	border-left: 1px solid #575e69;
+}
+
+/* ----------------------------------------------- */
+/** ArticlePager - 個別記事ページ */
+
+ul.article-pager {
+	padding-top: 15px;
+	font-size: 83%;
+}
+
+ul.article-pager li {
+	float: left;
+	width: 49%;
+	line-height: 1.25;
+}
+
+/* = special tech ... borderの高さを揃えるため */
+ul.article-pager {
+	overflow: hidden;
+}
+
+ul.article-pager li {
+	padding-top: 1px;/* 1px余白（上部） */
+	padding-bottom: 32768px;
+	margin-bottom: -32767px;/* 1px余白（下部） */
+}
+
+ul.article-pager li a {
+	display: block;
+	margin: 0 10px;
+}
+
+ul.article-pager li.prev {
+	text-align: right;
+}
+
+ul.article-pager li.next {
+	text-align: left;
+}
+
+ul.article-pager li.both {
+	border-left: 1px solid #8d8d8d;
+}
+
+/* =============================================== */
+/** 06. Main - 記事エリア */
+/* ----------------------------------------------- */
+
+div.article-outer {
+	text-align: left;
+	margin-bottom: 45px;
+	background: #fff;
+}
+
+
+/* ----------------------------------------------- */
+/** 記事ヘッダー */
+
+div.article-header {
+	position: relative;
+	background: #9f8d50;
+}
+
+/*** 日付 */
+div.article-date-outer {
+	font-size: 90%;
+	position: absolute;
+	top: 0.8em;
+	left: 70px;
+	color: #047391;
+}
+
+div.article-date-outer span.article-date {
+	margin-right: 3px;
+	margin-right: 0.25em;
+}
+
+div.article-date-outer span.article-time {}
+
+/*** カテゴリ */
+div.article-category-outer {
+	background: url(https://parts.blog.livedoor.jp/img/usr/default_2008/common/category.gif) no-repeat;
+	position: absolute;
+	text-align: right;
+	padding-left: 20px;
+	top: 0.8em;
+	left: 70px;
+	margin-left: 12em;
+}
+
+div.article-category-outer dl.article-category {
+	margin: 0;
+	padding: 0;
+	line-height: 1.25;
+}
+
+div.article-category-outer dl.article-category a {
+	color: #047391;
+}
+
+div.article-category-outer dl.article-category dt,
+div.article-category-outer dl.article-category dd {
+	display: inline;
+	margin: 0 5px;
+	font-size: 83%;
+}
+
+div.article-category-outer dl.article-category dt {
+	display: none;
+}
+
+/*** カテゴリアーカイブページではカテゴリを非表示にする */
+body.category div.article-category-outer {
+	display: none;
+}
+
+/** 記事タイトル */
+div.article-title-outer {
+	background: url(https://parts.blog.livedoor.jp/img/usr/lohas003_2/bg_entryheader_01.png) 20px bottom no-repeat #fff;
+	padding: 1.8em 30px 0.5em 70px;
+}
+
+h2.article-title {
+	clear: left;
+	margin: 0;
+	padding-top: 5px;
+	font-weight: bold;
+	font-size: 108%;
+	line-height: 1.4;
+}
+
+h2.article-title a {
+	color: #047391;
+	text-decoration: none;
+}
+
+h2.article-title span.rating img{
+	vertical-align: middle;
+}
+/* ----------------------------------------------- */
+/** 記事本文 */
+
+div.article-body {
+	padding: 30px 20px 15px;
+	line-height: 1.7;
+	background: url(https://parts.blog.livedoor.jp/img/usr/lohas003_2/bg_pattern_01.png);
+	margin: 0 20px;
+	font-size: 90%;
+}
+
+div.article-body-inner {
+	width: 100%;
+	overflow: hidden;
+}
+
+div.article-body-inner p span {
+	color: #fff;
+}
+
+/** 続きを読む */
+div.article-body span.article-continue {
+	display: block;
+	margin-top: 1em;
+}
+
+div.article-body div.article-body-more,
+div.article-body div.article-body-private {
+	clear: both;
+	margin-top: 1em;
+}
+
+/*** blockquote & pre */
+div.article-body blockquote,
+div.article-body pre {
+	background-color: #fff;
+	padding: 5px 15px;
+	margin: 5px 0;
+	color: #5A3D1C;
+}
+
+/*** img */
+div.article-body img.pict {
+	margin: 0 5px 5px 0;
+}
+
+/*** 共通テーマ */
+body.default_2008 dl.common-theme {
+	margin: 0 10px 25px;
+}
+
+/*** 記事タグ */
+body.default_2008 dl.article-tags {
+	margin: 25px 10px 0;
+}
+
+/*** プライベートモード */
+div.private-mode-announcement {
+	border-color: #858585;
+	line-height: 1.35;
+}
+
+/* ----------------------------------------------- */
+/** 記事フッター */
+
+div.article-footer {
+	padding: 15px 0;
+}
+
+ul.article-post {
+	margin: 0 0 15px;
+	padding: 0 19px 0 20px;
+	text-align: right;
+}
+
+ul.article-post li {
+	min-height: 16px;
+	font-size: 83%;
+}
+
+div.portal-links{
+	font-size: 85%;
+}
+
+/* =============================================== */
+/** 07. Option - トラックバック＆コメントエリア */
+/* ----------------------------------------------- */
+
+div#article-options {
+	padding: 10px 20px;
+}
+
+div.article-option {
+	padding: 15px 0;
+}
+
+div.article-option h3 {
+	margin: 0 0 10px;
+	padding: 0;
+	font-size:90%;
+}
+
+/*** 指定しやすいようstyleReset */
+	h4.ping-title,
+	ul.ping-info,
+	ul.ping-info li,
+	ul.comment-info,
+	ul.comment-info li {
+		padding: 0;
+		margin: 0;
+	}
+
+	ul.ping-info li,
+	ul.comment-info li {
+		list-style-type: none;
+	}
+
+/* ----------------------------------------------- */
+/** トラックバックURL */
+
+div#trackback-form ul {
+	margin: 0 30px;
+	padding: 0;
+}
+
+div#trackback-form ul li {
+	list-style-type: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+div#trackback-form ul li.trackback-form-url {
+	width: 100%;
+	margin-right: -90px;
+}
+
+div#trackback-form ul li.trackback-form-url span input {
+	width: 100%;
+}
+
+div#trackback-form ul li.trackback-form-url span {
+	display: block;
+	padding-right: 100px;
+	/* >> trackbackURL とsubmitボタンとの余白 100px-90px=10px となる */
+}
+
+div#trackback-form ul li.trackback-form-submit {
+	width: 80px;
+}
+
+div#trackback-form ul li.trackback-form-submit input {}
+
+/* ----------------------------------------------- */
+/** トラックバック一覧 */
+
+li.trackback-set {
+	padding: 0 0 10px 20px;
+}
+
+h4.ping-title {
+	display: inline;
+	padding: 0;
+	font-weight: normal;
+	font-size: 83%;
+}
+
+ul.ping-info {
+	display: inline;
+	font-size: 83%;
+}
+
+ul.ping-info li.ping-blog-name {
+	display: inline;
+	margin-left: 20px;
+	font-size: 100%;
+}
+
+ul.ping-info li.ping-blog-name span {
+	margin: 0 10px;
+}
+
+ul.ping-info li.ping-date {
+	display: inline;
+	margin-left: 10px;
+}
+
+ul.ping-info li.ping-excerpt {
+	display: block;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+ul.ping-info li.ping-excerpt img.trackback-rating {}
+
+/* ----------------------------------------------- */
+/** コメント一覧 */
+
+li.comment-set {
+	padding: 0 0 10px 20px;
+	font-size: 83%;
+}
+
+ul.comment-info li.comment-author {
+	display: inline;
+}
+
+ul.comment-info li.comment-date {
+	display: inline;
+	margin-left: 10px;
+}
+
+ul.comment-info li {
+	display: inline;
+}
+
+ul.comment-info li.comment-body {
+	display: block;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+ul.comment-info li.comment-body img.trackback-rating {}
+
+/* ----------------------------------------------- */
+/** コメントフォーム */
+
+div#comment-form-body {
+	padding: 15px 0 15px 20px;
+}
+
+div#comment-form-body table {
+	border: 0;
+	width: 100%;
+	line-height: 25px;
+	font-size:83%;
+}
+
+div#comment-form-body table th {
+	width: 3em;
+	padding-right: 5px;
+	text-align: right;
+	font-weight: normal;
+}
+
+input#author {
+	width: 65%;
+}
+
+input#email {
+	width: 65%;
+}
+
+input#url {
+	width: 85%;
+}
+
+input#bake {
+	margin: 0 0 0 5px;
+}
+
+textarea#text {
+	width: 90%;
+	height: 250px;
+}
+
+input.button {
+	margin-top: 10px;
+	width: 80px;
+}
+
+div#comment-form-body table tr.input-etc td {
+	padding-top: 6px;
+}
+
+label.input-rating {
+	margin-left: 20px;
+}
+
+label.input-rating select {
+	margin-left: 3px;
+}
+
+label.input-rating-face {
+	margin-left: 5px;
+}
+
+label.input-rating-star {}
+
+div#comment-form-body table tr.submit td {
+	text-align: center;
+}
+
+/*** コメント認証 */
+div.comment-auth-announcement {
+	margin: 10px 0;
+
+	border-color: #858585;
+}
+
+div.comment-auth-announcement p a {
+	margin: 0 3px;
+}
+
+/* ----------------------------------------------- */
+/** 関連記事 */
+
+div.related-articles{
+	padding: 15px 0 0;
+}
+div.related-articles h3{
+	margin: 0 0 10px;
+	padding: 0;
+	font-size: 100%;
+}
+div.related-articles ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+div.related-articles ul li{
+	background: url(https://parts.blog.livedoor.jp/img/usr/cmn/dot.gif) no-repeat 0 8px;
+	padding: 0 0 5px 9px;
+	margin-left: 5px;
+}
+
+
+/* =============================================== */
+/** 08. Sub & Extra - プラグインエリア */
+/* ----------------------------------------------- */
+
+div.sidetitlebody {}
+div.sidetitle {
+	font-weight: bold;
+	padding: 7px 9px;
+	text-align: left;
+	margin-bottom: 15px;
+	line-height: 1;
+	background: url(https://parts.blog.livedoor.jp/img/usr/lohas003_2/bg_pattern_01.png);
+	color: #047391;
+	font-size: 90%;
+}
+
+div.sidetop,
+div.sidebottom {
+	display: none;
+}
+
+div.side {
+	font-size: 83%;
+}
+
+div.sidebody {
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+div.sidewrapper{
+	margin-bottom: 45px;
+	line-height: 1.5;
+}
+
+/* ----------------------------------------------- */
+/** Tag Cloud */
+div.side ul.tagcloud {
+	padding-left: 9px;
+}
+
+/* ----------------------------------------------- */
+/** Calendar */
+
+div.calendarheadbody {
+	height: 29px;
+	line-height: 29px;
+	font-weight: bold;
+}
+
+div.calendarheadbody div.calendarhead {
+	font-weight: bold;
+	padding: 7px 9px;
+	text-align: center;
+	margin-bottom: 15px;
+	line-height: 1;
+	background: url(https://parts.blog.livedoor.jp/img/usr/lohas003_2/bg_pattern_01.png);
+	font-size: 90%;
+	color: #047391;
+}
+
+div#sub div.calendarheadbody div.calendarhead a,
+div#extra div.calendarheadbody div.calendarhead a {
+}
+
+div.caltop,
+div.calbottom {
+	display: none;
+}
+
+div.calbody {
+	padding: 15px 0 0 0;
+	margin: 0;
+	color: #5A3D1C;
+}
+
+table.caltbl {
+	width: 178;
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+}
+div.calbody table.calendartable {}
+td.caltblwkbg {}
+td.calendarwd {}
+td table.caltblwk td {
+	font-weight: bold;
+	height: 20px;
+	font-size: 90%;
+}
+
+td table.caltblwk td.weekday {}
+td table.caltblwk td.sat {}
+td table.caltblwk td.sun {}
+td table.caltblwk td span.calendarweek {}
+td.caltbldaybg {}
+td table.caltblday {
+	width: 178px;
+	font-size: 83%;
+}
+td table.caltblday td {
+	width: 20px;
+	height: 24px;
+	padding: 0;
+	text-align: center;
+}
+td table.caltblday td.caloff {}
+td table.caltblday td.calendard {}
+td table.caltblday td.calon {}
+td table.caltblday td.calon a {}
+td table.caltblday td.calendardbg {}
+td table.caltblday td span.calendar {}
+
+/* ----------------------------------------------- */
+/** Plugins */
+
+.nickname {
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.message {
+	text-align: left;
+	line-height: 1.25;
+}
+
+/* ----------------------------------------------- */
+/** LDServices */
+
+ul#ld-services {
+	background: url(https://parts.blog.livedoor.jp/img/usr/default_2008/sky/banner_base.gif) no-repeat center;
+	padding-top: 20px;
+}
+
+/* =============================================== */
+/** 09. Header & Footer - ヘッダー・フッター */
+/* ----------------------------------------------- */
+/** Header */
+
+table#header {
+	font-size: 75%;
+	background: #fff;
+}
+
+/* ----------------------------------------------- */
+/** Footer */
+
+div.footer-outer {
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+div.footer-outer-2 {
+	padding-top: 45px;
+}
+
+div#footer {
+	padding: 35px 0 20px;
+	font-size: 75%;
+	text-align: center;
+	line-height: 30px;
+}
+
+div#footer p {
+}
+
+
+/* =============================================== */
+/** 10. Others - ADエリア etc. */
+/* ----------------------------------------------- */
+/** ADエリア */
+
+div#ad {
+	overflow: hidden;
+	text-align: center;
+	background: #fff;
+	font-size: 16px;
+}
+
+div#ad iframe {
+	margin: 10px auto;
+}
+
+div.gAdsense {
+	padding: 10px 0;
+}
+
+body.ad {
+	background: transparent;
+	text-align: left;
+}
+
+a.adtitle {
+	color: #5A3D1C!important;
+	font-weight: bold;
+}
+
+a.adtitle span {
+	font-size: 90%!important;
+}
+
+a.addescription {
+	color: #000000!important;
+}
+
+
+a.addescription span {
+	font-size: 83%!important;
+}
+
+a.adurl {
+	color: #1b8d1c!important;
+	text-decoration: none;
+}
+
+a.adurl span {
+	font-size: 83%!important;
+}
+
+a.adld {
+	color: #666666!important;
+	text-decoration: underline;
+	font-size: 110%;
+}
+
+
+/* メッセージボード */
+.message-board {
+  background: rgba(0,0,0,0.1);
+  border-radius: 6px;
+  font-size:83%;
+  margin: 0 0 20px 0;
+  padding: 12px;
+}
